@@ -19,9 +19,6 @@ int main()
     */
     int desk[BUFFER__SIZE]; 
 #endif
-
-
-
     return 0;
 
 }
