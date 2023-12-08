@@ -129,6 +129,9 @@ int main()
 #endif
 //三目运算符
 //运算符：双目运算符 & 三目运算符
-    
+    int num1 = 1;
+    int num2 = 30;
+    int num3 = (num1 > num2) ? 100 : 666;
+    printf("num3:%d\n",num3);
     return 0;
 }
