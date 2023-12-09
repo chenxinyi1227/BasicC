@@ -111,7 +111,7 @@ int  main()
     int CircleTimes = COUNT_NUM >> 1;
     int randomNum = 0;
     
-    //一定需要由退出的条件
+    //一定需要退出的条件
     while(CircleTimes--)
     {
         randomNum =  rand() % RANGE_NUM + 1;
