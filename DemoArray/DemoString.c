@@ -12,7 +12,7 @@ int main()
     char * ptr = "helloworld";
     printf("ptr[0]:%c,\t*(ptr+1):%c\n", ptr[0], (*ptr + 1));
 
-    //为什么字符串不能改？以为字符串是常量，它也是存放在全局区的
+    //为什么字符串不能改？因为字符串是常量，它也是存放在全局区的
     ptr[0] = 'H';
     printf("ptr[0]:%c\n",ptr[0]);
 
