@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 #define BUFFER_SIZE 16
-/*内存泄漏:3中场景
+/*内存泄漏:3种场景
 1、野指针
 2、malloc出的堆空间 没有释放
 3、踩内存（read / write is invalid(无效))
@@ -27,7 +27,7 @@ int main()
 #if 0
     char *p;
     printf("\n");
-    
+
 #endif
 
     //case 2:
