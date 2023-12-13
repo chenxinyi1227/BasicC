@@ -16,7 +16,7 @@ int main()
     int *p = NULL;
 #endif
 
-#if 0
+#if 1
     //指针的使用:指针内部存放的是某变量的地址
     int a = 5;
     int *p = &a;
@@ -71,7 +71,7 @@ int main()
 
 #endif
 
-#if 1
+#if 0
     /*指针特性2：指针和字符串
     字符串是区别于字符数组的。*/
     char *ptr = "hello world";
@@ -89,13 +89,10 @@ int main()
 
     //Q3:字符串赋值
     char *ptr2 = NULL;
-    
-    
 #if 1
     ptr2 = "zhangsan";
 #else
     strcpy(ptr2, "zhangsan");
-
 #endif
     printf("ptr2:%s\n", ptr2);
 
