@@ -1,4 +1,5 @@
 #include "calculateFunc.h"
+#include "myString.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -91,6 +92,15 @@ int main()
     int sum4 = calculateMul(num1,num2);
     printf("sum4:%d\n",sum4);
 
+    //char *ptr = "hello\0world";
+    char *ptr = NULL;
+    int len = 0;
+#if 0
+    len = strlen(ptr);
+#else
+    len = myStrlen(ptr);
+#endif
+    printf("len:%d\n", len);
 
     return 0;
 }

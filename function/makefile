@@ -5,14 +5,18 @@
 # clean:
 # 	@rm -rf test
 
-count:demoFunc.o calculateFunc.o
-	gcc demoFunc.o calculateFunc.o -o count
+src=demoFunc.o calculateFunc.o myString.o
+count:${src}
+	gcc ${src} -o count
 
 demoFunc.o:demoFunc.c
 	gcc -c demoFunc.c -o demoFunc.o
 
 calculateFunc.o:calculateFunc.c
 	gcc -c calculateFunc.c -o calculateFunc.o
+
+myString.o:myString.c
+	gcc -c myString.c -o myString.o
 
 clean:
 	@rm -rf *.o count
