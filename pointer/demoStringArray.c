@@ -4,6 +4,7 @@
 int main()
 {
 #if 0
+    #if 0
     /*数组：一块连续的存储空间
     //1、数组是存储相同的数据类型
     int array[10];  整数数组
@@ -11,6 +12,8 @@ int main()
     char *array[10]  字符串数组
     /todo......结构体数组
     */
+   #endif
+
     //字符数组的内存在栈区
     char name[BUFFER_SIZE];//字符数组
     memset(name, 0 ,sizeof(name));
@@ -32,7 +35,7 @@ int main()
     */ 
 #endif
 
-#if 1
+#if 0
     //字符串： 内存存在在全局常量区
     char *ptr = "zhangsan";
 
@@ -47,6 +50,7 @@ int main()
             字符串内存放在全局区，不可以被修改
     */
 #endif
+
 #if 1
    //字符串数组
    char *array[BUFFER_SIZE] = {0};
@@ -56,19 +60,32 @@ int main()
     array[2] = "nihao";
     array[3] = "zhangsan";
     array[4] = "china";
-
+    
+    #if 0
     for (int idx = 0; idx < BUFFER_SIZE; idx++)
     {
         printf("arrar[%d] = %s\n", array[idx]);
     }
-    /*字符串数组：
-    1、他是一个数组
-    2、存放的是字符串
-    */
-   //伏笔
-    printf("array[0][0] %c\n",array[0][0]) ;
-#endif  
+    #endif
 
+    /*字符串数组：
+        1、他是一个数组
+        2、存放的是字符串
+    */
+    //伏笔
+    printf("array[0]: %s\n", array[0]);
+    /* 指针即数组 */
+    /* array[0] = *(array) + 0) */
+    printf("array[0]: %s\n", *(array + 0));
+    
+    printf("array[1][1]: %c\n", array[1][1]);
+    printf("array[1][1]: %c\n", *(*(array + 1) + 1));
+    printf("array[1][1]: %c\n", *(array[1] + 1));
+   
+    /* 指针即数组 */
+    //array[1] = *(array + 1);
+    //array[x][y] = *(*(array + x) + y) = *(array[x] + y) 
+#endif  
 
 return 0;
 }

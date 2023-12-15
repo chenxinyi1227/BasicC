@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#define BUFFER_SIZE 5
 
 /*函数参数：可以有也可以没有
 函数返回值：
@@ -47,9 +47,31 @@ typedef enum STAUS_CODE STAUS_CODE;//这种可以
 #endif
 
 //函数指针
-void printStr()
+void printStr(void *arg)
 {
     printf("hello world\n");
+}
+
+//计算传入参数
+int calStrLen(const char *str)
+{
+    int ret = 0;
+
+    if(!str)
+    {
+        return ret;
+    }
+    //避免指针移动
+    const char *tmpPtr = str;
+    int count = 0;
+    while(*str != '\0')
+    {
+        count++;
+        str++;
+    }
+    printf("str:%s\n", str);
+    return count;
+   
 }
 
 int main()
@@ -111,6 +133,8 @@ int main()
 #endif
     printf("len:%d\n", len);
 #endif
+
+#if 0
     int choice = 0;
     /* 函数指针就是钩子函数，主要用在回调函数中。 */
     /* 函数指针 */
@@ -121,6 +145,10 @@ int main()
     {
         printStr();
     }
+#endif
+    char buffer[] = "hello world";
+    int len = calStrLen(buffer);
+    printf("len:%d\n", len);
 
     return 0;
 }
