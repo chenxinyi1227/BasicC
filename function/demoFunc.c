@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 #define BUFFER_SIZE 5
 
 /*函数参数：可以有也可以没有
