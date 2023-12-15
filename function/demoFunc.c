@@ -13,7 +13,7 @@
 //API(Application Programming Interface):应用程序接口
 
 //函数的定义
-#if 1
+#if 0
 //case1:没有参数，没有返回值
 void purchaseAppointThing()
 {
@@ -21,7 +21,7 @@ void purchaseAppointThing()
 }
 #endif
 
-#if 1
+#if 0
 //case2:有参数，没有返回值
 //函数参数一定有数据类型
 void myAddNum(int num1, int num2)
@@ -31,7 +31,7 @@ void myAddNum(int num1, int num2)
 }
 #endif
 
-#if 1
+#if 0
 //case3:有参数，有返回值
 int myAddNum2(int num1, int num2)
 {
@@ -45,6 +45,12 @@ int myAddNum2(int num1, int num2)
 //取别名
 typedef enum STAUS_CODE STAUS_CODE;//这种可以
 #endif
+
+//函数指针
+void printStr()
+{
+    printf("hello world\n");
+}
 
 int main()
 {
@@ -73,11 +79,14 @@ int main()
         printf("l not geted\n");
     }
 #endif
+
 #if 0
     STAUS_CODE status;
     int len = sizeof(status);
     printf("len = %d\n",len);
 #endif
+
+#if 0
     int num1 = 50;
     int num2 = 60;
     int sum1 = calculateAdd(num1,num2);
@@ -101,6 +110,17 @@ int main()
     len = myStrlen(ptr);
 #endif
     printf("len:%d\n", len);
+#endif
+    int choice = 0;
+    /* 函数指针就是钩子函数，主要用在回调函数中。 */
+    /* 函数指针 */
+    void(*func)() = printStr;
+    func();
+
+    if(choice == 1)
+    {
+        printStr();
+    }
 
     return 0;
 }
