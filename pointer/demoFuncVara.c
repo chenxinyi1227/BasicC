@@ -17,7 +17,7 @@ int swapData(int *val1, int *val2)
 }
 #endif
 
-//函数做函数参数会自动弱化为指针
+//数组做函数参数会自动弱化为指针（8个字节）
 #if 0
 void printfArray(int *array)
 {
