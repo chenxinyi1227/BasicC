@@ -65,7 +65,7 @@ int calStrLen(const char *str)
     //避免指针移动
     const char *tmpPtr = str;
     int count = 0;
-    while(*str != '\0')
+    while(*tmpPtr != '\0')
     {
         count++;
         str++;
