@@ -1,20 +1,24 @@
 # $@:表示目标文件的完整名称
 # $^：表示所有不重复的依赖文件，以空格分隔
 
-src=main.o add.o sub.o mul.o div.o 
-main:${src}
-	gcc ${src} -o main
+# 自定义变量
+OBJ=main.o add.o sub.o mul.o div.o
+TARGET=main
+
+# 使用${TARGET} 必须要加 '$'符
+${TARGET}:${OBJ}
+	gcc $^ -o $@
 
 add.o:add.c
-	gcc -c add.c -o add.o
+	gcc -c $^ -o $@
 sub.o:sub.c
-	gcc -c sub.c -o sub.o
+	gcc -c $^ -o $@
 mul.o:mul.c
-	gcc -c mul.c -o mul.o
+	gcc -c $^ -o $@
 div.o:div.c
-	gcc -c div.c -o div.o
+	gcc -c $^ -o $@
 main.o:main.c
-	gcc -c main.c -o main.o
+	gcc -c $^ -o $@
 
 clean:
-	@rm -rf *.o main
+	@rm -rf *.o ${TARGET}
