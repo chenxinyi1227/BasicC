@@ -1,3 +1,6 @@
+# $@:表示目标文件的完整名称
+# $^：表示所有不重复的依赖文件，以空格分隔
+
 src=main.o add.o sub.o mul.o div.o 
 main:${src}
 	gcc ${src} -o main
